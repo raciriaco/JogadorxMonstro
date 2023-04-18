@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de Monstro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="panel scores">
+            <div class="score">
+                <h1>Jogador</h1>
+                <div class="life-bar">
+                    <div class="life"></div>
+                    {{ vidaJogador }}
+                </div>
+                <div></div>
+            </div>
+            <div class="score">
+                <h1>Monstro</h1>
+                <div class="life-bar">
+                    <div class="life"></div>
+                    {{ vidaMonstro }}
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="panel result">
+            <div class="win">Você ganhou!!! :)</div>
+            <div class="lose">Você perdeu! :(</div>
+        </div>
+        <div class="panel buttons">
+            <template>
+                <button :class="ocultarHidden = true ? {'attack': 'overflow:hidden'} : 'attack'" @click="ataqueScores">Ataque</button>
+                <button :class="ocultarHidden = true ? {'especial-attack': 'overflow:hidden'} : 'especial-attack'" @click="especialScores">Ataque Especial</button>
+                <button :class="ocultarHidden = true ? {'heal': 'overflow: hidden'} : 'heal'" @click="curarScores">Curar</button>
+                <button :class="ocultarHidden = true ? {'give-up': 'overflow: hidden' : 'give-up'}" @click="desistirJogo">Desistir</button>
+            </template>
+            <button class="btn new-game">Iniciar Jogo</button>
+        </div>
+        <div class="panel logs">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
