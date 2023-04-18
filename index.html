@@ -32,10 +32,10 @@
         </div>
         <div class="panel buttons">
             <template>
-                <button :class="ocultarHidden = true ? {'attack': 'overflow:hidden'} : 'attack'" @click="ataqueScores">Ataque</button>
-                <button :class="ocultarHidden = true ? {'especial-attack': 'overflow:hidden'} : 'especial-attack'" @click="especialScores">Ataque Especial</button>
-                <button :class="ocultarHidden = true ? {'heal': 'overflow: hidden'} : 'heal'" @click="curarScores">Curar</button>
-                <button :class="ocultarHidden = true ? {'give-up': 'overflow: hidden' : 'give-up'}" @click="desistirJogo">Desistir</button>
+                <button class="btn attack" @click="ataqueScores">Ataque</button>
+                <button class="btn espacial-attack" @click="especialScores">Ataque Especial</button>
+                <button class="btn heal" @click="curarScores">Curar</button>
+                <button class="btn give-up" @click="desistirJogo">Desistir</button>
             </template>
             <button class="btn new-game">Iniciar Jogo</button>
         </div>
