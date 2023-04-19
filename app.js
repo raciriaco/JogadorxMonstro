@@ -7,6 +7,9 @@ new Vue({
         ataqueMonstro: [7, 12],
         ataqueEspecial: 5,
         curarJogador: [10, 15],
+        resulDanoJ: '',
+        resulDanoM: '',
+        resulCuradoJ: '',
 
         ocultarHidden: false
 
@@ -15,11 +18,13 @@ new Vue({
         ataqueScores() {
             let danoJogador = Math.floor(Math.random() * (this.ataqueJogador[1] - this.ataqueJogador[0]) + this.ataqueJogador[0]);
       
-            this.vidaMonstro -= danoJogador;
+            this.resulDano += this.vidaMonstro -= danoJogador;
+            this.resulDanoJ = danoJogador;
 
             let danoMonstro = Math.floor(Math.random() * (this.ataqueMonstro[1] - this.ataqueMonstro[0]) + this.ataqueMonstro[0]);
 
             this.vidaJogador -= danoMonstro;
+            this.resulDanoM = danoMonstro;
         },
         especialScores() {
             let danoEspecialJogador = Math.floor(Math.random() * (this.ataqueJogador[1] - this.ataqueJogador[0]) + this.ataqueJogador[0]) + this.ataqueEspecial;
@@ -30,22 +35,27 @@ new Vue({
 
             this.vidaJogador -= danoEspecialMonstro;
 
+            this.resulDanoM = danoEspecialMonstro;
+            this.resulDanoJ = danoEspecialJogador;
+
 
         },
         curarScores() {
             let jogadorCurado = Math.floor(Math.random() * (this.curarJogador[1] - this.curarJogador[0]) + this.curarJogador[0]);
             let danoMonstro = Math.floor(Math.random() * (this.ataqueMonstro[1] - this.ataqueMonstro[0]) + this.ataqueMonstro[0]);
 
-            console.log(jogadorCurado);
             this.vidaJogador -= danoMonstro;
             this.vidaJogador += jogadorCurado;
+
+            this.resulDanoM = danoMonstro;
+            this.resulCuradoJ = jogadorCurado;
         },
     
     },
     computed:{
         desistirJogo() {
             
-         }
+        }
 
     }
 })
