@@ -13,7 +13,8 @@
                 <h1>Jogador</h1>
                 <div class="life-bar">
                     <div class="life"></div>
-                    {{ vidaJogador }}
+
+                    {{ vidaJogador }} %
                 </div>
                 <div></div>
             </div>
@@ -21,7 +22,7 @@
                 <h1>Monstro</h1>
                 <div class="life-bar">
                     <div class="life"></div>
-                    {{ vidaMonstro }}
+                    {{ vidaMonstro }} %
                 </div>
                 <div></div>
             </div>
@@ -35,7 +36,7 @@
                 <button class="btn attack" @click="ataqueScores">Ataque</button>
                 <button class="btn espacial-attack" @click="especialScores">Ataque Especial</button>
                 <button class="btn heal" @click="curarScores">Curar</button>
-                <button class="btn give-up" @click="desistirJogo">Desistir</button>
+                <button class="btn give-up">Desistir</button>
             </template>
             <button class="btn new-game">Iniciar Jogo</button>
         </div>

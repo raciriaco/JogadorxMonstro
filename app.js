@@ -40,13 +40,11 @@ new Vue({
             this.vidaJogador -= danoMonstro;
             this.vidaJogador += jogadorCurado;
         },
-        
-
-
+    
     },
     computed:{
         desistirJogo() {
-            return this.ocultarHidden = true
+            
          }
 
     }
