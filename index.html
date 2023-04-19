@@ -42,9 +42,9 @@
         </div>
         <div class="panel logs">
             <ul>
-                <li>{{ resulDanoM }}</li>
-                <li>{{ resulDanoJ }}</li>
-                <li>{{ resulCuradoJ }}</li>
+                <li>{{ resulDanoM ? 'Monstro atingiu jogador com ' + resulDanoM : ''  }}</li>
+                <li>{{ resulDanoJ ? 'Jogador atingiu monstro com ' + resulDanoJ : ''  }}</li>
+                <li>{{ resulCuradoJ ? 'Jogador ganhou força de ' + resulCuradoJ : ''  }}</li>
             </ul>
         </div>
     </div>

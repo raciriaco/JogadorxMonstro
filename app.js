@@ -19,12 +19,12 @@ new Vue({
             let danoJogador = Math.floor(Math.random() * (this.ataqueJogador[1] - this.ataqueJogador[0]) + this.ataqueJogador[0]);
       
             this.resulDano += this.vidaMonstro -= danoJogador;
-            this.resulDanoJ = 'Jogador atingiu monstro com ' + danoJogador;
+            this.resulDanoJ = danoJogador;
 
             let danoMonstro = Math.floor(Math.random() * (this.ataqueMonstro[1] - this.ataqueMonstro[0]) + this.ataqueMonstro[0]);
 
             this.vidaJogador -= danoMonstro;
-            this.resulDanoM = 'Monstro atingiu jogador com ' + danoMonstro;
+            this.resulDanoM = danoMonstro;
         },
         especialScores() {
             let danoEspecialJogador = Math.floor(Math.random() * (this.ataqueJogador[1] - this.ataqueJogador[0]) + this.ataqueJogador[0]) + this.ataqueEspecial;
@@ -35,8 +35,8 @@ new Vue({
 
             this.vidaJogador -= danoEspecialMonstro;
 
-            this.resulDanoM = 'Monstro atingiu jogador com ' + danoEspecialMonstro;
-            this.resulDanoJ = 'Jogador atingiu monstro com ' + danoEspecialJogador;
+            this.resulDanoM = danoEspecialMonstro;
+            this.resulDanoJ = danoEspecialJogador;
 
 
         },
@@ -47,8 +47,8 @@ new Vue({
             this.vidaJogador -= danoMonstro;
             this.vidaJogador += jogadorCurado;
 
-            this.resulDanoM = 'Monstro atingiu jogador com ' + danoMonstro;
-            this.resulCuradoJ = 'Jogador ganhou força de ' + jogadorCurado;
+            this.resulDanoM = danoMonstro;
+            this.resulCuradoJ = jogadorCurado;
         },
     
     },
